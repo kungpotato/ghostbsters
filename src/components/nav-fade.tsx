@@ -26,8 +26,8 @@ const FadeOutDiv = () => {
 
   return (
     <div
-      className={`mx-10 transition-opacity ${
-        isVisible ? `opacity-100 ${prevScrollY > 40 ? 'container fixed top-0' : 'relative'}` : 'opacity-0'
+      className={`container transition-opacity ${
+        isVisible ? `opacity-100 ${prevScrollY > 40 ? 'fixed top-0' : ''}` : 'opacity-0'
       } `}
     >
       <div className={`bg-white`} onMouseLeave={() => setIsOpen(false)}>
