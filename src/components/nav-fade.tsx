@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
 
 const FadeOutDiv = () => {
@@ -29,20 +30,25 @@ const FadeOutDiv = () => {
         isVisible ? `opacity-100 ${prevScrollY <= 40 ? '' : 'fixed top-0'}` : 'opacity-0'
       } container mx-10`}
     >
-      <div className="bg-white h-16">
-        <nav className="flex justify-center space-x-4">
-          <a href="/dashboard" className="font-medium text-slate-700 hover:border-b-2 border-black transition-all">
-            Home
-          </a>
-          <a href="/team" className="font-medium text-slate-700 hover:border-b-2 border-black transition-all">
-            Team
-          </a>
-          <a href="/projects" className="font-medium text-slate-700 hover:border-b-2 border-black transition-all">
-            Projects
-          </a>
-          <a href="/reports" className="font-medium text-slate-700 hover:border-b-2 border-black transition-all">
-            Reports
-          </a>
+      <div className="bg-white ">
+        <nav className="flex justify-center h-14">
+          <ul className="flex space-x-4">
+            <li className="self-center">
+              <Link href="#home" className="hover:border-b-2 hover:border-black transition duration-300">
+                Home
+              </Link>
+            </li>
+            <li className=" self-center">
+              <Link href="#news" className="hover:border-b-2 hover:border-black transition duration-300">
+                News
+              </Link>
+            </li>
+            <li className=" self-center">
+              <Link href="#contact" className="hover:border-b-2 hover:border-black transition duration-300">
+                Contact
+              </Link>
+            </li>
+          </ul>
         </nav>
       </div>
     </div>
