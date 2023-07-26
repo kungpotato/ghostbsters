@@ -34,17 +34,17 @@ const FadeOutDiv = () => {
         <nav className="flex justify-center h-14">
           <ul className="flex space-x-4">
             <li className="self-center">
-              <Link href="#home" className="hover:border-b-2 hover:border-black transition duration-300">
+              <Link href="#home" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
                 Home
               </Link>
             </li>
             <li className=" self-center">
-              <Link href="#news" className="hover:border-b-2 hover:border-black transition duration-300">
+              <Link href="#news" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
                 News
               </Link>
             </li>
             <li className=" self-center">
-              <Link href="#contact" className="hover:border-b-2 hover:border-black transition duration-300">
+              <Link href="#contact" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
                 Contact
               </Link>
             </li>
