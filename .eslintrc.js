@@ -5,6 +5,7 @@ module.exports = {
     semi: 'off',
     'no-undef': 'off',
     'comma-dangle': 'off',
-    quotes: 'off'
+    quotes: 'off',
+    'import/extensions': 'off'
   }
 }
