@@ -29,11 +29,21 @@ const FadeOutDiv = () => {
         isVisible ? `opacity-100 ${prevScrollY <= 40 ? '' : 'fixed top-0'}` : 'opacity-0'
       } container mx-10`}
     >
-      {/* Your content goes here */}
-      {/* Replace this with the content you want to hide */}
-      <div className="bg-white p-4">
-        <h1 className="text-xl font-bold">Content to hide</h1>
-        <p>This is the content that will fade out when scrolling down.</p>
+      <div className="bg-white h-16">
+        <nav className="flex justify-center space-x-4">
+          <a href="/dashboard" className="font-medium text-slate-700 hover:border-b-2 border-black transition-all">
+            Home
+          </a>
+          <a href="/team" className="font-medium text-slate-700 hover:border-b-2 border-black transition-all">
+            Team
+          </a>
+          <a href="/projects" className="font-medium text-slate-700 hover:border-b-2 border-black transition-all">
+            Projects
+          </a>
+          <a href="/reports" className="font-medium text-slate-700 hover:border-b-2 border-black transition-all">
+            Reports
+          </a>
+        </nav>
       </div>
     </div>
   )
