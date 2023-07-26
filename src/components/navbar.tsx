@@ -15,6 +15,7 @@ export default function Navbar() {
         </div>
       </div>
       <FadeOutDiv />
+      <div className="relative bg-gray-100 h-10 w-full"></div>
     </nav>
   )
 }

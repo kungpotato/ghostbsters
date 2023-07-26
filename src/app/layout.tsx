@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Prompt } from 'next/font/google'
 import Navbar from '../components/navbar'
+import ScrollToTopButton from '../components/scroll-top-button'
 
 const prompt = Prompt({ weight: ['400'], subsets: ['latin'] })
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={prompt.className}>
         <Navbar />
         <div className="pt-4">{children}</div>
+        <ScrollToTopButton />
       </body>
     </html>
   )
