@@ -26,9 +26,9 @@ const FadeOutDiv = () => {
 
   return (
     <div
-      className={`transition-opacity ${
-        isVisible ? `opacity-100 ${prevScrollY > 40 ? 'fixed top-0' : ''}` : 'opacity-0'
-      } container mx-10`}
+      className={`mx-10 transition-opacity ${
+        isVisible ? `opacity-100 ${prevScrollY > 40 ? 'container fixed top-0' : 'relative'}` : 'opacity-0'
+      } `}
     >
       <div className={`bg-white`} onMouseLeave={() => setIsOpen(false)}>
         <nav className="flex justify-center h-14">
@@ -55,9 +55,9 @@ const FadeOutDiv = () => {
           onMouseEnter={() => setIsOpen(true)}
           className={`bg-white w-full z-[1] fixed transition-all duration-300 transform ${
             isOpen ? 'opacity-100 max-h-96 scale-100' : 'opacity-0 max-h-0 scale-95'
-          }`}
+          } `}
         >
-          <div className="mt-2 p-4">
+          <div className="container mx-10 mt-2 p-4">
             <p>Your content here</p>
           </div>
         </div>
