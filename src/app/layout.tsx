@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="th">
       <body className={prompt.className}>
         <Navbar />
-        {children}
+        <div className="pt-4">{children}</div>
       </body>
     </html>
   )
