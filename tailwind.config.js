@@ -23,6 +23,10 @@ module.exports = {
           xl: '1280px',
           '2xl': '1536px'
         }
+      },
+      height: {
+        128: '32rem',
+        144: '36rem'
       }
     }
   },

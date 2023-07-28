@@ -16,7 +16,7 @@ const ImageSlider: React.FC<SliderProps> = ({ images }) => {
   }
 
   return (
-    <div className="relative w-full h-96 overflow-hidden">
+    <div className="relative w-full h-128 overflow-hidden">
       <button
         className="absolute top-1/2 left-4 z-10 p-2 bg-gray-600 text-white rounded-full focus:outline-none"
         onClick={prevSlide}
