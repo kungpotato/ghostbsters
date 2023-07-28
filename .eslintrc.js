@@ -6,6 +6,8 @@ module.exports = {
     'no-undef': 'off',
     'comma-dangle': 'off',
     quotes: 'off',
-    'import/extensions': 'off'
+    'import/extensions': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'no-unused-vars': 'warn'
   }
 }

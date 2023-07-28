@@ -1,6 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "editor.minimap.enabled": false,
