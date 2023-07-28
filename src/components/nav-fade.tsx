@@ -30,44 +30,45 @@ const FadeOutDiv = () => {
         isVisible ? `opacity-100 ${prevScrollY > 40 ? 'fixed top-0 w-full' : 'relative'}` : 'opacity-0'
       } `}
     >
-      <div className={`bg-white`} onMouseLeave={() => setIsOpen(false)}>
+      <div className={`bg-white`}>
         <nav className="flex justify-center h-14">
-          <ul className="flex space-x-4">
-            <li className="self-center" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+          <div className="w-full" onMouseEnter={() => setIsOpen(false)} />
+          <ul className="flex space-x-4 min-w-max">
+            <li className="self-center" onMouseEnter={() => setIsOpen(true)}>
               <Link href="#home" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
                 มาใหม่
               </Link>
             </li>
-            <li className=" self-center" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+            <li className=" self-center" onMouseEnter={() => setIsOpen(true)}>
               <Link href="#news" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
                 ผู้ชาย
               </Link>
             </li>
-            <li className=" self-center" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+            <li className=" self-center" onMouseEnter={() => setIsOpen(true)}>
               <Link href="#contact" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
                 ผู้หญิง
               </Link>
             </li>
-            <li className=" self-center" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+            <li className=" self-center" onMouseEnter={() => setIsOpen(true)}>
               <Link href="#contact" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
                 เด็กผู้ชาย
               </Link>
             </li>
-            <li className=" self-center" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+            <li className=" self-center" onMouseEnter={() => setIsOpen(true)}>
               <Link href="#contact" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
                 เด็กผู้หญิง
               </Link>
             </li>
-            <li className=" self-center" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+            <li className=" self-center" onMouseEnter={() => setIsOpen(true)}>
               <Link href="#contact" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
                 ลดราคา
               </Link>
             </li>
           </ul>
+          <div className="w-full" onMouseEnter={() => setIsOpen(false)} />
         </nav>
         <div
           onMouseLeave={() => setIsOpen(false)}
-          onMouseEnter={() => setIsOpen(true)}
           className={`bg-red-400 w-full z-20 fixed transition-all duration-300 transform ${
             isOpen ? 'opacity-100 max-h-96 scale-100' : 'opacity-0 max-h-0 scale-95'
           }`}

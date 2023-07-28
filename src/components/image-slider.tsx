@@ -18,13 +18,13 @@ const ImageSlider: React.FC<SliderProps> = ({ images }) => {
   return (
     <div className="relative w-full h-128 overflow-hidden">
       <button
-        className="absolute top-1/2 left-4 z-10 p-2 bg-gray-600 text-white rounded-full focus:outline-none"
+        className="absolute top-1/2 left-4 z-10 p-2 text-white text-4xl rounded-full focus:outline-none"
         onClick={prevSlide}
       >
         &#60;
       </button>
       <button
-        className="absolute top-1/2 right-4 z-10 p-2 bg-gray-600 text-white rounded-full focus:outline-none"
+        className="absolute top-1/2 right-4 z-10 p-2 text-white text-4xl rounded-full focus:outline-none"
         onClick={nextSlide}
       >
         &#62;
@@ -38,6 +38,11 @@ const ImageSlider: React.FC<SliderProps> = ({ images }) => {
           style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover' }}
         />
       ))}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 space-x-2 flex">
+        {images.map((_, index) => (
+          <div key={index} className={`w-2 h-2 rounded-full ${index === current ? 'bg-white' : 'bg-gray-500'}`} />
+        ))}
+      </div>
     </div>
   )
 }
