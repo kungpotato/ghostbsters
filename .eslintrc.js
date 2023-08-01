@@ -8,6 +8,7 @@ module.exports = {
     quotes: 'off',
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
-    'no-unused-vars': 'warn'
+    'no-unused-vars': 'warn',
+    'import/order': 'off'
   }
 }
