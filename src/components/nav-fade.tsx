@@ -8,10 +8,11 @@ import { FiHeart, FiShoppingCart } from 'react-icons/fi'
 const FadeOutDiv = () => {
   const [isVisible, setIsVisible] = useState(true)
   const [prevScrollY, setPrevScrollY] = useState(0)
-  const [isOpen, setIsOpen] = useState(false)
+  const [currentTab, setTab] = useState<number | null>(null)
+  const [isFocused, setIsFocused] = useState(false)
 
   const handleScroll = useCallback(() => {
-    setIsOpen(false)
+    setTab(null)
     const currentScrollY = window.scrollY
     if (currentScrollY >= 40) {
       setIsVisible(false)
@@ -31,48 +32,71 @@ const FadeOutDiv = () => {
     <div>
       <div
         className={`container z-20 transition-opacity ${
-          isVisible
+          isVisible || isFocused
             ? `opacity-100 ${prevScrollY > 40 ? 'fixed top-0 left-0 right-0 w-full' : 'relative '}`
             : 'opacity-0'
         } `}
       >
         <div className={`bg-white`}>
           <nav className="flex justify-center h-14">
-            <div className="w-full" onMouseEnter={() => setIsOpen(false)} />
+            <div className="w-full" onMouseEnter={() => setTab(null)} />
             <ul className="flex space-x-4 min-w-max">
-              <li className="self-center" onMouseEnter={() => setIsOpen(true)}>
-                <Link href="#home" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
+              <li className="self-center" onMouseEnter={() => setTab(1)}>
+                <Link
+                  href="#home"
+                  className={`p-3 ${currentTab === 1 && 'border-b-2 border-black transition duration-300'}`}
+                >
                   มาใหม่
                 </Link>
               </li>
-              <li className=" self-center" onMouseEnter={() => setIsOpen(true)}>
-                <Link href="#news" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
+              <li className=" self-center" onMouseEnter={() => setTab(2)}>
+                <Link
+                  href="#news"
+                  className={`p-3 ${currentTab === 2 && 'border-b-2 border-black transition duration-300'}`}
+                >
                   ผู้ชาย
                 </Link>
               </li>
-              <li className=" self-center" onMouseEnter={() => setIsOpen(true)}>
-                <Link href="#contact" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
+              <li className=" self-center" onMouseEnter={() => setTab(3)}>
+                <Link
+                  href="#contact"
+                  className={`p-3 ${currentTab === 3 && 'border-b-2 border-black transition duration-300'}`}
+                >
                   ผู้หญิง
                 </Link>
               </li>
-              <li className=" self-center" onMouseEnter={() => setIsOpen(true)}>
-                <Link href="#contact" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
+              <li className=" self-center" onMouseEnter={() => setTab(4)}>
+                <Link
+                  href="#contact"
+                  className={`p-3 ${currentTab === 4 && 'border-b-2 border-black transition duration-300'}`}
+                >
                   เด็กผู้ชาย
                 </Link>
               </li>
-              <li className=" self-center" onMouseEnter={() => setIsOpen(true)}>
-                <Link href="#contact" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
+              <li className=" self-center" onMouseEnter={() => setTab(5)}>
+                <Link
+                  href="#contact"
+                  className={`p-3 ${currentTab === 5 && 'border-b-2 border-black transition duration-300'}`}
+                >
                   เด็กผู้หญิง
                 </Link>
               </li>
-              <li className=" self-center" onMouseEnter={() => setIsOpen(true)}>
-                <Link href="#contact" className="p-3 hover:border-b-2 hover:border-black transition duration-300">
+              <li className=" self-center" onMouseEnter={() => setTab(6)}>
+                <Link
+                  href="#contact"
+                  className={`p-3 ${currentTab === 6 && 'border-b-2 border-black transition duration-300'}`}
+                >
                   ลดราคา
                 </Link>
               </li>
             </ul>
-            <div className="flex w-full self-center space-x-4 justify-end" onMouseEnter={() => setIsOpen(false)}>
-              <SearchInput />
+            <div className="flex w-full self-center space-x-4 justify-end" onMouseEnter={() => setTab(null)}>
+              <SearchInput
+                onChange={() => {
+                  setIsFocused(true)
+                  setTab(null)
+                }}
+              />
               <div className="self-center">
                 <FiHeart />
               </div>
@@ -83,16 +107,35 @@ const FadeOutDiv = () => {
           </nav>
         </div>
       </div>
-      <div
-        onMouseLeave={() => setIsOpen(false)}
-        className={`bg-red-400 w-full z-20 fixed transition-all duration-300 transform ${
-          isOpen ? 'opacity-100 max-h-96 scale-100' : 'opacity-0 max-h-0 scale-95'
-        } ${prevScrollY > 40 && 'top-14'}`}
-      >
-        <div className="container mx-10 p-4">
-          <p>Your content here</p>
+      {!isFocused && (
+        <div
+          onMouseLeave={() => setTab(null)}
+          className={`bg-red-400 w-full z-20 fixed transition-all duration-300 transform ${
+            currentTab ? 'opacity-100 max-h-96 scale-100' : 'opacity-0 max-h-0 scale-95'
+          } ${prevScrollY > 40 && 'top-14'}`}
+        >
+          <div className="container pt-4 pb-4">
+            <p>Your content here</p>
+          </div>
         </div>
-      </div>
+      )}
+      {!currentTab && (
+        <div
+          className={`bg-red-400 w-full z-20 fixed transition-all duration-300 transform ${
+            isFocused ? 'opacity-100 max-h-96 scale-100' : 'opacity-0 max-h-0 scale-95'
+          } ${prevScrollY > 40 && 'top-14'}`}
+        >
+          <div className="container pb-4 pt-4">
+            <button
+              onClick={() => {
+                setIsFocused(false)
+              }}
+            >
+              ปิด
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
