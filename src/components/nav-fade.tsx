@@ -31,7 +31,9 @@ const FadeOutDiv = () => {
     <div>
       <div
         className={`container z-20 transition-opacity ${
-          isVisible ? `opacity-100 ${prevScrollY > 40 ? 'fixed top-0 w-full' : 'relative'}` : 'opacity-0'
+          isVisible
+            ? `opacity-100 ${prevScrollY > 40 ? 'fixed top-0 left-0 right-0 w-full' : 'relative '}`
+            : 'opacity-0'
         } `}
       >
         <div className={`bg-white`}>
