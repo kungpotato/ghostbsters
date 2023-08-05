@@ -87,9 +87,9 @@ const FadeOutDiv = () => {
         onMouseLeave={() => setIsOpen(false)}
         className={`bg-red-400 w-full z-20 fixed transition-all duration-300 transform ${
           isOpen ? 'opacity-100 max-h-96 scale-100' : 'opacity-0 max-h-0 scale-95'
-        }`}
+        } ${prevScrollY > 40 && 'top-14'}`}
       >
-        <div className="container mx-10 mt-2 p-4">
+        <div className="container mx-10 p-4">
           <p>Your content here</p>
         </div>
       </div>
