@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+'use client'
+
+import React, { useCallback, useEffect, useState } from 'react'
 
 interface SliderProps {
   images: string[]
@@ -6,17 +8,39 @@ interface SliderProps {
 
 const ImageSlider: React.FC<SliderProps> = ({ images }) => {
   const [current, setCurrent] = useState(0)
+  const [isHovering, setIsHovering] = useState(false)
 
-  const nextSlide = () => {
-    setCurrent(current === images.length - 1 ? 0 : current + 1)
+  const handleMouseEnter = () => {
+    setIsHovering(true)
   }
+
+  const handleMouseLeave = () => {
+    setIsHovering(false)
+  }
+
+  const nextSlide = useCallback(() => {
+    setCurrent(current === images.length - 1 ? 0 : current + 1)
+  }, [current, images.length])
 
   const prevSlide = () => {
     setCurrent(current === 0 ? images.length - 1 : current - 1)
   }
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (!isHovering) {
+        nextSlide()
+      }
+    }, 6000)
+    return () => clearInterval(timer)
+  }, [current, isHovering, nextSlide])
+
   return (
-    <div className="relative w-full h-128 overflow-hidden">
+    <div
+      className="relative w-full h-144 overflow-hidden"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <button
         className="absolute top-1/2 left-4 z-10 p-2 text-white text-4xl rounded-full focus:outline-none"
         onClick={prevSlide}

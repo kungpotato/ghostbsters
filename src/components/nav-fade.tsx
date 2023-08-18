@@ -30,6 +30,19 @@ const FadeOutDiv = () => {
 
   return (
     <div>
+      <nav onMouseEnter={() => setTab(null)}>
+        <div className="relative bg-gray-100 h-10 w-full">
+          <div className="container flex justify-end h-10 text-xs items-center space-x-3">
+            <div>ค้นหาร้านค้า</div>
+            <div>|</div>
+            <div>ความช่วยเหลือ</div>
+            <div>|</div>
+            <div>เข้าร่วมกับเรา</div>
+            <div>|</div>
+            <div>ลงเชื่อเข้าใช้</div>
+          </div>
+        </div>
+      </nav>
       <div
         className={`container z-20 transition-opacity ${
           isVisible || isFocused
@@ -41,7 +54,7 @@ const FadeOutDiv = () => {
           <nav className="flex justify-center h-14">
             <div className="w-full" onMouseEnter={() => setTab(null)} />
             <ul className="flex space-x-4 min-w-max">
-              <li className="self-center" onMouseEnter={() => setTab(1)}>
+              <li className="self-center" onMouseEnter={() => !isFocused && setTab(1)}>
                 <Link
                   href="#home"
                   className={`p-3 ${currentTab === 1 && 'border-b-2 border-black transition duration-300'}`}
@@ -49,7 +62,7 @@ const FadeOutDiv = () => {
                   มาใหม่
                 </Link>
               </li>
-              <li className=" self-center" onMouseEnter={() => setTab(2)}>
+              <li className=" self-center" onMouseEnter={() => !isFocused && setTab(2)}>
                 <Link
                   href="#news"
                   className={`p-3 ${currentTab === 2 && 'border-b-2 border-black transition duration-300'}`}
@@ -57,7 +70,7 @@ const FadeOutDiv = () => {
                   ผู้ชาย
                 </Link>
               </li>
-              <li className=" self-center" onMouseEnter={() => setTab(3)}>
+              <li className=" self-center" onMouseEnter={() => !isFocused && setTab(3)}>
                 <Link
                   href="#contact"
                   className={`p-3 ${currentTab === 3 && 'border-b-2 border-black transition duration-300'}`}
@@ -65,7 +78,7 @@ const FadeOutDiv = () => {
                   ผู้หญิง
                 </Link>
               </li>
-              <li className=" self-center" onMouseEnter={() => setTab(4)}>
+              <li className=" self-center" onMouseEnter={() => !isFocused && setTab(4)}>
                 <Link
                   href="#contact"
                   className={`p-3 ${currentTab === 4 && 'border-b-2 border-black transition duration-300'}`}
@@ -73,7 +86,7 @@ const FadeOutDiv = () => {
                   เด็กผู้ชาย
                 </Link>
               </li>
-              <li className=" self-center" onMouseEnter={() => setTab(5)}>
+              <li className=" self-center" onMouseEnter={() => !isFocused && setTab(5)}>
                 <Link
                   href="#contact"
                   className={`p-3 ${currentTab === 5 && 'border-b-2 border-black transition duration-300'}`}
@@ -81,7 +94,7 @@ const FadeOutDiv = () => {
                   เด็กผู้หญิง
                 </Link>
               </li>
-              <li className=" self-center" onMouseEnter={() => setTab(6)}>
+              <li className=" self-center" onMouseEnter={() => !isFocused && setTab(6)}>
                 <Link
                   href="#contact"
                   className={`p-3 ${currentTab === 6 && 'border-b-2 border-black transition duration-300'}`}

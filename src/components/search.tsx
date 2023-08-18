@@ -8,6 +8,7 @@ function SearchInput({
   onChange,
   onFocus
 }: {
+  // eslint-disable-next-line no-unused-vars
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
   onFocus?: FocusEventHandler<HTMLInputElement>
 }) {
