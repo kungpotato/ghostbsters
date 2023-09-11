@@ -9,6 +9,9 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-unused-vars': 'warn',
-    'import/order': 'off'
+    'import/order': 'off',
+    'object-curly-newline': 'off',
+    'consistent-return': 'off',
+    'no-return-assign': 'off'
   }
 }
