@@ -37,3 +37,11 @@
 .swiper-pagination-bullet-active {
   background: red;
 }
+
+.zoom-on-hover {
+  transition: transform 0.3s;
+}
+
+.zoom-on-hover:hover {
+  transform: scale(1.1);
+}

@@ -41,7 +41,18 @@ export default function Home() {
           {/* ... and so on */}
         </div>
       </div>
-
+      <div className="w-fit zoom-on-hover">
+        <div className="border-8 border-white  bg-white shadow-lg rounded-lg cursor-pointer ">
+          <Image
+            src="/images/_1bb74813-890d-490d-b495-948e227a426e.jpg"
+            alt="xxx"
+            width={150}
+            height={150}
+            className="rounded-lg"
+          />
+        </div>
+        <div className="pt-1 text-center">เครื่องดื่ม</div>
+      </div>
       <div>test</div>
       <div>test</div>
       <div>test</div>
